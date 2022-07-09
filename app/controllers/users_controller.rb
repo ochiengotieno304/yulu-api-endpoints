@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def status_update
     @user.update(status: 1)
-    render json {message: "user status updated"}
+    render json: { message: "user status updated" }
   end
 
   private
