@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorized, except: %i[create login]
-  before_action :find_user, only: %i[show update]
+  before_action :find_user, only: %i[show update login]
 
   # # GET /users
   # def index
@@ -33,8 +33,6 @@ class UsersController < ApplicationController
 
   # LOGGIN IN
   def login
-    @user = User.find_by(username: params[:username])
-
     if @user && @user.authenticate(params[:password])
       token = encode_token({ user_id: @user.id })
       render json: { user: @user, token: token }
