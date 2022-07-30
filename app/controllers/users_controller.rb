@@ -73,10 +73,10 @@ class UsersController < ApplicationController
     regex = Regexp.new("^AAA/A/01-00111/2019$", Regexp::IGNORECASE)
     regex.match input
   end
-end
 
-def find_user
-  @user = User.find_by_username!(params[:username])
-rescue ActiveRecord::RecordNotFound
-  render json: { errors: "User not found" }, status: :not_found
+  def find_user
+    @user = User.find_by_username!(params[:username])
+  rescue ActiveRecord::RecordNotFound
+    render json: { errors: "User not found" }, status: :not_found
+  end
 end
