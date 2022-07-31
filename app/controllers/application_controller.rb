@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
       token = auth_header.split(" ")[1]
       # header: { Authorization: 'bearer <token>' }
       begin
-        JWT.decode(token, SECRET, true, algorithm: "HS256")
+        JWT.decode(token, SECRET, true, algorithm: "HS512")
       rescue JWT::DecodeError
         nil
       end
