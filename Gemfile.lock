@@ -54,6 +54,10 @@ GEM
     activerecord (7.0.3)
       activemodel (= 7.0.3)
       activesupport (= 7.0.3)
+    activerecord-cockroachdb-adapter (7.0.0)
+      activerecord (~> 7.0.3)
+      pg (~> 1.2)
+      rgeo-activerecord (~> 7.0.0)
     activestorage (7.0.3)
       actionpack (= 7.0.3)
       activejob (= 7.0.3)
@@ -153,6 +157,10 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rgeo (2.4.0)
+    rgeo-activerecord (7.0.1)
+      activerecord (>= 5.0)
+      rgeo (>= 1.0.0)
     strscan (3.0.3)
     thor (1.2.1)
     timeout (0.3.0)
@@ -167,6 +175,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-cockroachdb-adapter
   bcrypt (~> 3.1.7)
   bootsnap
   debug
